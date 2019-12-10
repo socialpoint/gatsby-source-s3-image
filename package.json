@@ -51,7 +51,7 @@
     "gatsby": "2.18.10",
     "gatsby-source-filesystem": "2.1.42",
     "jest": "24.9.0",
-    "jest-junit": "7.0.0",
+    "jest-junit": "10.0.0",
     "json-stringify-pretty-compact": "2.0.0",
     "mitm": "1.7.0",
     "nodemon": "1.19.4",
