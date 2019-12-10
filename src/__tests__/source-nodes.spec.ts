@@ -94,7 +94,7 @@ describe('Source S3ImageAsset nodes.', () => {
     expect(entityNodes).toHaveLength(17)
   })
 
-  test('Verify sourceNodes creates the correct # of nodes, given no fixtures.', async () => {
+  test('Verify sourceNodes creates the correct # of nodes, given no fixtures. ', async () => {
     ListObjectsMock.mockReturnValueOnce({ promise: () => [] })
     // NB: pulls from fixtures defined above, not S3 API.
     const entityNodes = await sourceNodes(sourceNodeArgs, {
