@@ -1,23 +1,29 @@
 language: node_js
 node_js:
   - 10.15.1
+
 cache:
   directories:
     - node_modules
+
 install: yarn
-stages:
-  - install_dependencies
-  - test
-  - build
-  - release
-    if: branch = master
+
+conditions: v1
+
 jobs:
   include:
     - stage: install_dependencies
       script: yarn -s --no-progress --frozen-lockfile
     - stage: test
-      script: yarn test --coverage && cat ./coverage/lcov.info | yarn codacy-coverage && yarn codecov
+      script: yarn test --coverage && cat ./coverage/lcov.info
     - stage: build
       script: yarn build && yarn ts:defs
     - stage: release
+      if: branch = master
       script: yarn release
+
+stages:
+  - install_dependencies
+  - test
+  - build
+  - release
